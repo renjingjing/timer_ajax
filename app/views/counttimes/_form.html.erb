@@ -1,0 +1,21 @@
+<%= form_for(@counttime) do |f| %>
+  <% if @counttime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@counttime.errors.count, "error") %> prohibited this counttime from being saved:</h2>
+
+      <ul>
+      <% @counttime.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sec %><br>
+    <%= f.text_field :sec %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

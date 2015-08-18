@@ -1,0 +1,2 @@
+module CounttimesHelper
+end
