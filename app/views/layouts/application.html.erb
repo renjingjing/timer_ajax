@@ -10,6 +10,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script >
+  $(document).ready(function(){
+    var counter = 11;
+      var myInterval = setInterval(function () {
+      --counter;
+      console.log(counter);
+      $("#showtimer").text(counter);
+      if (counter== 1){
+      counter = 11;
+      };
+    }, 1000);
+  });
+ </script>
+
 </head>
 <body>
 

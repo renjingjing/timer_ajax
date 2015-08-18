@@ -1,28 +1,13 @@
 <div class="container">
+<div class="row text center">
   <br>
-  <br>
-
-  <div class="row">
-    <div class="text-center">
-      <h3><span class="label label-warning" id="showtimer">counter</span></h3>
-  </div>
-</div>
-<br>
-<br>
-
-  <div class="row">
-    <div class="text-center">
-      <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#mynewpost">
-        Record
-      </button>
-    </div>
-  </div>
-  <br>
-  <hr>
-</div>
-  <!-- this render each post to _post.html.erb -->
-  <div class="row" id="container_posts">
+  <%= form_for(@counttime, remote: true) do |f| %>
+          <%= f.label :sec %><br>
+          <%= f.text_area :sec, class: "form-control",id:"showtimer"%>
+          <%= submit_tag "Record", class:"btn btn-pramary" %>
+  <% end %>
+ </div>
+  <div class="row text center" id="container_counttimes">
     <%= render @counttimes %>
   </div>
-
 </div>

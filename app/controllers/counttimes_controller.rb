@@ -4,28 +4,18 @@ class CounttimesController < ApplicationController
   # GET /counttimes
   # GET /counttimes.json
   def index
-    @counttimes = Counttime.all
+    @counttimes = Counttime.all.order(id: :desc)
+    @counttime  = Counttime.new
   end
 
-  # GET /counttimes/1
-  # GET /counttimes/1.json
-  def show
-  end
-
-  # GET /counttimes/new
   def new
-    @counttime = Counttime.new
-  end
-
-  # GET /counttimes/1/edit
-  def edit
+    @counttime  = Counttime.new
   end
 
   # POST /counttimes
   # POST /counttimes.json
   def create
     @counttime = Counttime.new(counttime_params)
-
     respond_to do |format|
       if @counttime.save
         format.html { redirect_to @counttime, notice: 'Counttime was successfully created.' }
